@@ -147,6 +147,8 @@ MongodbUriParser.prototype.format = function format(uriObject) {
     // While it's not to the official spec, we only put a slash if there's a database, independent of whether there are options
     if (uriObject.database) {
         uri += '/' + encodeURIComponent(uriObject.database);
+    } else {
+        uri += '/';
     }
 
     if (uriObject.options) {
